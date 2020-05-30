@@ -1,0 +1,64 @@
+.array-container {
+	position: auto;
+	bottom: 2px;
+	width: 100vw;
+	padding-right: 1em;
+
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.array-bar {
+	display: inline-block; /* arranges the array bars in horizontal way*/
+	margin-top: 4em;
+	margin-left: 1px; /*Top,Bottom -> 0px Left,Right -> 1px*/
+	margin-right: 1px;
+	padding-top: 10em;
+	align-items: center;
+}
+
+.buttons button {
+	background-color: #47535e;
+	margin-left: 1em;
+	border: none;
+	color: #eaf0f1;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	outline: 0;
+	display: block; /* Make the buttons appear below each other */
+	font: 15px "Century Gothic", Futura, sans-serif;
+}
+.buttons button:not(:last-child) {
+	border-bottom: none; /* Prevent double borders */
+}
+
+
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+}
+
+
+#container {
+    display: flex-end; /* establish flex container */
+        flex-direction: row; /* make main axis horizontal (default value) */
+        justify-content: center; /* center items horizontally, in this case */
+        align-items: bottom; /* center items vertically, in this case */
+    height: 300px; /* for demo purposes */
+    border: 1px solid black; /* for demo purposes */
+    background-color: #eee; /* for demo purposes */
+}
+
+.box {
+    width: 300px;
+    margin: 5px;
+    text-align: center;
+}
+
+#bluebox { background: aqua; }
+#redbox { background: red; }
