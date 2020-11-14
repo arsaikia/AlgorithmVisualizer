@@ -70,11 +70,11 @@ const ENABLED_BUTTON = { dummy: 'currently enabled' };
 
 const SortingVisualizer = (props) => {
 	const classes = useStyles();
-	const [msg, setMsg] = useState('Welcome')
+	const [ msg, setMsg ] = useState('Welcome');
 	const [ ANIMATION_SPEED_MS, SET_ANIMATION_SPEED_MS ] = useState(10);
 	const [ buttonText, setButtonText ] = useState('RANDOMIZE ARRAY');
 	const [ reinitialize, setReinitialize ] = useState(false);
-	const [popup, setPopup] = useState(reinitialize);
+	const [ popup, setPopup ] = useState(reinitialize);
 	const [ stopAllExec, setStopAllExec ] = useState(false);
 	const [ barArray, setBarArray ] = useState([]);
 	const [ sliderValue, setSliderValue ] = useState((NUMBER_OF_ARRAY_BARS / 4) >> 0); //(NUMBER_OF_ARRAY_BARS / 4) >> 0
@@ -178,18 +178,12 @@ const SortingVisualizer = (props) => {
 		// this.setState({array: sortArray})
 		const RESTORE_TIME = parseInt(ANIMATION_SPEED_MS * animations.length / 2 + 3000);
 		setTimeout(() => setMsg('Sorting Done'), RESTORE_TIME);
-
-		
 	};
 	const quickSort = () => {
-
 		setMsg('Sorting using Qucik Sort');
-		
+
 		const [ animations, sortArray ] = getQuickSortAnimations(barArray);
-		for (let i; i < animations.length - 1; i++) {
-
-			
-
+		for (let i = 0; i < animations.length - 1; i++) {
 			const isColorChange = i % 6 === 0 || i % 6 === 1;
 			const arrayBars = document.getElementsByClassName('array-bar');
 			if (isColorChange === true) {
@@ -218,17 +212,13 @@ const SortingVisualizer = (props) => {
 		}
 		// this.setState({array: sortArray})
 		const RESTORE_TIME = parseInt(ANIMATION_SPEED_MS * animations.length / 2 + 3000);
-		console.log(RESTORE_TIME);
-		setTimeout(() => setMsg('Done...'), RESTORE_TIME);
-
+		setTimeout(() => setMsg('Sorting Done'), RESTORE_TIME);
 	};
 
 	const bubbleSort = () => {
 		setMsg('Sorting using Bubble Sort');
 		const [ animations, sortArray ] = getBubbleSortAnimations(barArray);
 		for (let i = 0; i < animations.length; i++) {
-			console.log('...................>>>>>>>>...........', ANIMATION_SPEED_MS);
-
 			const isColorChange = i % 4 === 0 || i % 4 === 1;
 			const arrayBars = document.getElementsByClassName('array-bar');
 			if (isColorChange === true) {
@@ -287,7 +277,6 @@ const SortingVisualizer = (props) => {
 	};
 
 	const selectionSort = () => {
-
 		setMsg('Sorting using Selection Sort');
 		const [ animations, sortArray ] = getSelectionSortAnimations(barArray);
 		for (let i = 0; i < animations.length; i++) {
@@ -324,7 +313,7 @@ const SortingVisualizer = (props) => {
 	const TOTAL_BUTTONS = 1 + SORT_BUTTONS;
 
 	const reinitializeEverything = () => {
-		reinitialize ? window.location.reload(): resetArray();
+		reinitialize ? window.location.reload() : resetArray();
 	};
 
 	useEffect(
@@ -348,7 +337,7 @@ const SortingVisualizer = (props) => {
 					className={classes.container}
 					maxWidth="xs"
 					maxWidth="xl"
-					style={{ backgroundColor: '#cfe8fc'}}
+					style={{ backgroundColor: '#cfe8fc' }}
 				>
 					<ButtonAppBar
 						SET_ANIMATION_SPEED_MS={SET_ANIMATION_SPEED_MS}
@@ -373,8 +362,6 @@ const SortingVisualizer = (props) => {
 							maxHeight       : '85vh'
 						}}
 					>
-
-
 						{array.map((value, idx) => (
 							<div
 								className="array-bar"
@@ -389,10 +376,8 @@ const SortingVisualizer = (props) => {
 						))}
 					</Container>
 
-					
-
-					<div style={{ width: '100%'}}>
-						<Box display="flex" p={1} alignContent="center" marginBottom= '10px'>
+					<div style={{ width: '100%' }}>
+						<Box display="flex" p={1} alignContent="center" marginBottom="10px">
 							<Box p={1} flexGrow={1}>
 								<Container>
 									<InputSlider
@@ -403,7 +388,7 @@ const SortingVisualizer = (props) => {
 										isSliderDisabled={reinitialize}
 										onChange={setSliderValue}
 									/>
-									<Typography id="range-slider" variant="h7" color='inherit'>
+									<Typography id="range-slider" variant="h7" color="inherit">
 										Select Array Size
 									</Typography>
 								</Container>
@@ -427,7 +412,7 @@ const SortingVisualizer = (props) => {
 										setSliderValue={SET_ANIMATION_SPEED_MS}
 										isSliderDisabled={reinitialize}
 									/>
-									<Typography id="range-slider" variant="h7" gutterBottom color='inherit'>
+									<Typography id="range-slider" variant="h7" gutterBottom color="inherit">
 										Set Animation Delay (MS)
 									</Typography>
 								</Container>
@@ -435,7 +420,7 @@ const SortingVisualizer = (props) => {
 						</Box>
 					</div>
 
-					<SimpleSnackbar msg={msg} stateVal={!reinitialize}/>
+					<SimpleSnackbar msg={msg} stateVal={!reinitialize} />
 				</Container>
 			</Fade>
 		</Fragment>

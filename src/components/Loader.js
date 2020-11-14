@@ -35,7 +35,7 @@ export default function CircularStatic (props) {
 		const timer = setInterval(() => {
 			setProgress(
 				(prevProgress) =>
-					prevProgress >= 95 ? props.setLoader(100) : prevProgress + Math.floor(Math.random() * 10)
+					prevProgress >= 95 ? props.setLoader(100) : prevProgress + Math.floor(Math.random() * 20)
 			);
 		}, 100);
 		return () => {
@@ -53,7 +53,6 @@ export default function CircularStatic (props) {
 				justify="center"
 				style={{ minHeight: '100vh' }}
 			>
-				>
 				<CircularProgressWithLabel size={props.size} setLoader={props.setLoader} value={progress} />
 			</Grid>
 		</Container>

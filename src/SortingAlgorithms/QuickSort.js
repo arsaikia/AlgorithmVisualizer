@@ -8,7 +8,7 @@ export function getQuickSortAnimations(array) {
     return [animations, array];
 }
 
-getQuickSortAnimations([7,2,1,6]);
+// getQuickSortAnimations([7,2,1,6]);
 
 function quickSort(auxillaryArray, startIndex, endIndex, animations) {
     let pivotIndex;
